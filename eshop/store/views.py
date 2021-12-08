@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render
 
 from .models import Customer, Order, OrderItem, Product, ShippingAddress
@@ -33,3 +34,7 @@ def checkout(request):
     # to be changed later for unregister user.
     context = {"items": items, "order": order}
     return render(request, "store/checkout.html", context)
+
+
+def updateItem(request):
+    return JsonResponse("Item was added", safe=False)
